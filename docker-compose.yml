@@ -29,7 +29,7 @@ services:
       - DB_USER=postgres
       - DB_HOST=postgres
       - DB_NAME=new_employee_db
-      - DB_PASSWORD=admin123
+      - DB_PASSWORD=admin321
       - DB_PORT=5432
       - FRONTEND_URL=http://16.171.195.252:8027
     depends_on:
