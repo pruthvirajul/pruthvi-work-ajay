@@ -4,14 +4,14 @@ const { Pool } = require('pg');
 const path = require('path');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 3406;
+const port = process.env.PORT || 3409;
 
 // PostgreSQL connection
 const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
   host: process.env.DB_HOST || 'postgres',
   database: process.env.DB_NAME || 'new_employee_db',
-  password: process.env.DB_PASSWORD || 'admin123',
+  password: process.env.DB_PASSWORD || 'admin321',
   port: process.env.DB_PORT || 5432,
 });
 
@@ -19,14 +19,14 @@ const pool = new Pool({
 app.use(cors({
   origin: [
     process.env.FRONTEND_URL || '*', // Allow environment variable or all origins for testing
-    'http://44.223.23.145:3406',
-    'http://127.0.0.1:5500',
-    'http://44.223.23.145:5500',
-    'http://127.0.0.1:5501',
-    'http://127.0.0.1:5503',
-    'http://44.223.23.145:5503',
-    'http://44.223.23.145:8025',
-    'http://44.223.23.145:8026'
+    'http://16.171.195.252:3409',
+    'http://16.171.195.252:5500',
+    'http://16.171.195.252:5500',
+    'http://16.171.195.252:5501',
+    'http://16.171.195.252:5503',
+    'http://16.171.195.252:5503',
+    'http://16.171.195.252:8027',
+    'http://16.171.195.252:8028'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],

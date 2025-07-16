@@ -6,7 +6,7 @@ services:
     container_name: postgres-wfh1
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin123
+      POSTGRES_PASSWORD: admin321
       POSTGRES_DB: new_employee_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -23,15 +23,15 @@ services:
     build: ./Backend
     container_name: backend-wfh1
     ports:
-      - "3406:3406"
+      - "3409:3409"
     environment:
-      - PORT=3406
+      - PORT=3409
       - DB_USER=postgres
       - DB_HOST=postgres
       - DB_NAME=new_employee_db
       - DB_PASSWORD=admin123
       - DB_PORT=5432
-      - FRONTEND_URL=http://44.223.23.145:8025
+      - FRONTEND_URL=http://16.171.195.252:8027
     depends_on:
       postgres:
         condition: service_healthy
@@ -40,13 +40,13 @@ services:
     build: ./Frontend
     container_name: frontend-wfh1
     ports:
-      - "8025:80"
+      - "8027:80"
 
   hr_page:
     build: ./HR_page
     container_name: hrpage-wfh1
     ports:
-      - "8026:80"
+      - "8028:80"
 
 volumes:
   postgres_data:
